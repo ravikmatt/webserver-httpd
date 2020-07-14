@@ -1,4 +1,4 @@
-FROM rhscl/httpd-24-rhel7
+FROM centos/s2i-core-centos7
 
 # Apache HTTP Server image.
 #
@@ -33,7 +33,7 @@ EXPOSE 8080
 EXPOSE 8443
 
 RUN yum install -y yum-utils && \
-    yum install -y redhat-release-server && \
+    yum install -y centos-release-scl epel-release && \
     INSTALL_PKGS="gettext hostname nss_wrapper bind-utils httpd24 httpd24-mod_ssl httpd24-mod_auth_mellon httpd24-mod_security openssl" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
