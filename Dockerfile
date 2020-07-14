@@ -23,7 +23,7 @@ LABEL summary="$SUMMARY" \
       io.k8s.display-name="Apache httpd $HTTPD_VERSION" \
       io.openshift.expose-services="8080:http,8443:https" \
       io.openshift.tags="builder,httpd,httpd24" \
-      name="rhscl/httpd-24-rhel7" \
+      name="centos/httpd-24-centos7" \
       version="$HTTPD_VERSION" \
       com.redhat.component="httpd24-container" \
       usage="s2i build https://github.com/sclorg/httpd-container.git --context-dir=examples/sample-test-app/ centos/httpd-24-centos7 sample-server" \
